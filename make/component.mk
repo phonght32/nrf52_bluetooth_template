@@ -70,7 +70,7 @@ include $(foreach comp, $(COMPONENT_PATHS), $(addprefix $(comp)/, component.mk))
 # Add component include prefix paths to componnent paths to get all absolute include paths. 
 COMPONENTS_INCLUDE_PATHS += $(foreach comp, $(COMPONENT_PATHS), \
 						$(foreach comp_inc, $(COMPONENT_INCLUDES), \
-							$(addprefix $(subst $(PROJECT_PATH)/, ,$(COMPONENT_PATHS)/), $(comp_inc))))
+							$(addprefix $(subst $(PROJECT_PATH)/, ,$(comp)/), $(comp_inc))))
 						
 
 # Add component source prefix paths to component paths to get all absolute source paths.
